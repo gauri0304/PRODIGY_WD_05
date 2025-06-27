@@ -13,7 +13,7 @@ information.
 
 PRODIGY INFOTECH
 
-Key Features: 
-🌤️ 1. Real-Time Weather via Geolocation & City Search
-🎨 2. Responsive, Themed UI with Animations
+Key Features: <br>
+🌤️ 1. Real-Time Weather via Geolocation & City Search <br>
+🎨 2. Responsive, Themed UI with Animations <br>
 📊 3. Multi-View Forecast Data Display
