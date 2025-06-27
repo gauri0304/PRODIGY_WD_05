@@ -1,0 +1,405 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Libertinus Mono", monospace;
+  background-color: #1c1f2b;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 30px;
+}
+
+.dashboard {
+  background-color: #10131c;
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.dashboard h1 {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.dashboard h1:hover {
+  color: #fff;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.search-bar form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2a2e3b;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 6px;
+}
+
+.button-group button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fbc531;
+  color: #10131c;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-group button i {
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.button-group button:hover {
+  background-color: #f1c40f;
+}
+
+.search-bar input:focus {
+  border: 2px solid #fbc531;
+}
+
+.button-group button:focus {
+  outline: 2px solid #f1c40f;
+}
+
+@media (max-width: 600px) {
+  .search-bar form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+}
+
+.weather-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a2e3b;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.city-info h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.city-info p {
+  font-size: 16px;
+  color: #bbb;
+  margin: 5px 0;
+}
+
+.city-info p:hover {
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: white;
+  color: #000;
+  font-weight: bold;
+}
+
+.city-info h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.city-info h1:hover {
+  font-size: 70px;
+}
+
+.weather-icon img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.weather-icon img:hover {
+  width: 170px;
+  height: 170px;
+}
+
+.hourly-forecast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  gap: 80px;
+  padding: 25px;
+  background-color: #2a2e3b;
+  border-radius: 15px;
+  scrollbar-width: thin;
+  margin-top: 10px;
+}
+
+.hourly-forecast .hour {
+  font-size: 18px;
+  min-width: 80px;
+  text-align: center;
+  color: #eee;
+  flex-shrink: 0;
+}
+
+.hourly-forecast .hour i {
+  font-size: 30px;
+  margin: 10px 0;
+  color: #fbc531;
+  display: block;
+}
+
+.hourly-forecast .hour i:hover {
+  font-size: 40px;
+}
+
+.air-conditions {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2a2e3b;
+  padding: 20px;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.air-conditions div {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 10px;
+}
+
+.air-conditions p {
+  font-size: 16px;
+  color: #bbb;
+}
+
+.air-conditions h3 {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.weekly-forecast {
+  background-color: #2a2e3b;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.weekly-forecast h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.forecast-days {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.weekly-forecast ul {
+  list-style: none;
+  padding: 0;
+}
+
+.weekly-forecast li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid #3a3f51;
+  font-size: 18px;
+}
+
+.weekly-forecast li:last-child {
+  border-bottom: none;
+}
+
+.weekly-forecast li i {
+  color: #fbc531;
+  font-size: 30px;
+  margin: 0 10px;
+}
+
+.weekly-forecast li span {
+  width: 80px;
+  display: inline-block;
+  text-align: left;
+}
+
+.clear {
+  background: url('sunny.jpg') no-repeat center/cover;
+}
+
+.clouds {
+  background: url('cloudy.jpg') no-repeat center/cover;
+}
+
+.rain {
+  background: url('rain.jpg') no-repeat center/cover;
+}
+
+.snow {
+  background: url('snowy.jpg') no-repeat center/cover;
+}
+
+body.light-theme {
+  background-color: #f4f6fa;
+  color: #1c1f2b;
+}
+
+body.light-theme .dashboard,
+body.light-theme .dashboard h1 {
+  background-color: #ffffff;
+  color: #1c1f2b;
+}
+
+body.light-theme .search-bar input {
+  background-color: #e0e3eb;
+  color: #1c1f2b;
+}
+
+body.light-theme .search-bar button {
+  background-color: #273c75;
+  color: #fff;
+}
+
+body.light-theme .search-bar button:hover {
+  background-color: #192a56;
+}
+
+body.light-theme .weekly-forecast,
+body.light-theme .current-weather,
+body.light-theme .hourly-forecast,
+body.light-theme .air-conditions {
+  background-color: #f0f2f8;
+  color: #000;
+}
+
+body.light-theme .current-weather,
+body.light-theme .weekly-forecast h3,
+body.light-theme .city-info h2,
+body.light-theme .city-info p,
+body.light-theme .city-info h1 {
+  background-color: #f0f2f8;
+  color: #000;
+}
+
+body.light-theme .weather-icon {
+  background-color: #b1aeae;
+}
+
+body.light-theme .hourly-forecast .hour {
+  background-color: #f0f2f8;
+  color: #000;
+}
+
+/* ✨ Transitions for interactive elements */
+.search-bar input,
+.button-group button,
+.search-bar button,
+.current-weather,
+.hourly-forecast,
+.weekly-forecast,
+.air-conditions,
+.weather-icon img {
+  transition: all 0.3s ease;
+}
+
+/* ✨ Smooth input focus border */
+.search-bar input:focus {
+  border: 2px solid #fbc531;
+  box-shadow: 0 0 10px #fbc53180;
+}
+
+/* ✨ Buttons hover effect */
+.button-group button:hover,
+.search-bar button:hover {
+  transform: scale(1.05);
+}
+
+/* ✨ Button focus ring */
+.button-group button:focus,
+.search-bar button:focus {
+  outline: 2px solid #f1c40f;
+  box-shadow: 0 0 8px #f1c40f80;
+}
+
+/* ✨ Animation on component load */
+.current-weather,
+.hourly-forecast,
+.weekly-forecast,
+.air-conditions {
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* 🔄 Reusable fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional reusable class */
+.fade-in {
+  animation: fadeInUp 0.6s ease both;
+}

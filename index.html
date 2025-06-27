@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard">
+        <h1>Weather App</h1>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <form onsubmit="getWeatherByCity(); return false;">
+                    <input type="text" id="cityInput" placeholder="Search for cities" aria-label="City name" />
+                    <div class="button-group">
+                        <button type="submit" aria-label="Search for city">
+                            <i class="fa-solid fa-search"></i>
+                        </button>
+                        <button type="button" onclick="getWeatherByLocation()" aria-label="Use my location">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Weather Overview -->
+            <div class="weather-overview">
+                <div class="current-weather">
+                    <div class="city-info">
+                        <h2 id="cityName">Mumbai</h2>
+                        <p id="rainChance">Chance of rain: 0%</p>
+                        <p id="localTime">🕒 Local Time: --:--</p>
+                        <p id="sunTime">🌅 Sunrise: -- | 🌇 Sunset: --</p>
+                        <h1 id="temperature">31°</h1>
+                    </div>
+
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="icons/sunny.png" alt="Sunny" />
+                    </div>
+                </div>
+
+                <!-- Hourly Forecast -->
+                <div class="hourly-forecast" id="hourlyForecast">
+                    <div class="hour">
+                        <p>6:00 AM</p><i class="fa-solid fa-cloud"></i>
+                        <p>25°</p>
+                    </div>
+                    <div class="hour">
+                        <p>9:00 AM</p><i class="fa-solid fa-cloud-sun"></i>
+                        <p>28°</p>
+                    </div>
+                    <div class="hour">
+                        <p>12:00 PM</p><i class="fa-solid fa-sun"></i>
+                        <p>33°</p>
+                    </div>
+                    <div class="hour">
+                        <p>3:00 PM</p><i class="fa-solid fa-sun"></i>
+                        <p>34°</p>
+                    </div>
+                    <div class="hour">
+                        <p>6:00 PM</p><i class="fa-solid fa-sun"></i>
+                        <p>32°</p>
+                    </div>
+                    <div class="hour">
+                        <p>9:00 PM</p><i class="fa-solid fa-cloud"></i>
+                        <p>30°</p>
+                    </div>
+                </div>
+
+                <!-- Air Conditions -->
+                <div class="air-conditions">
+                    <div>
+                        <p>Real Feel</p>
+                        <h3 id="realFeel">--°</h3>
+                    </div>
+                    <div>
+                        <p>Wind</p>
+                        <h3 id="windSpeed">-- km/h</h3>
+                    </div>
+                    <div>
+                        <p>Humidity</p>
+                        <h3 id="humidity">--%</h3>
+                    </div>
+                    <div>
+                        <p>Pressure</p>
+                        <h3 id="pressure">-- hPa</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 Day Forecast -->
+            <div class="weekly-forecast">
+                <h3>7-Day Forecast</h3>
+                <div id="weeklyForecast" class="forecast-days">
+                    <ul>
+                        <li><span>Today</span><i class="fa-solid fa-sun"></i> Sunny <span>36/22</span></li>
+                        <li><span>Tue</span><i class="fa-solid fa-sun"></i> Sunny <span>37/21</span></li>
+                        <li><span>Wed</span><i class="fa-solid fa-sun"></i> Sunny <span>37/21</span></li>
+                        <li><span>Thu</span><i class="fa-solid fa-cloud"></i> Cloudy <span>37/21</span></li>
+                        <li><span>Fri</span><i class="fa-solid fa-cloud"></i> Cloudy <span>37/21</span></li>
+                        <li><span>Sat</span><i class="fa-solid fa-cloud-showers-heavy"></i> Rainy <span>37/21</span>
+                        </li>
+                        <li><span>Sun</span><i class="fa-solid fa-bolt"></i> Storm <span>37/21</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
