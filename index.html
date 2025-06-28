@@ -12,9 +12,8 @@
 <body>
     <div class="dashboard">
         <h1>Weather App</h1>
-        <!-- Main Content -->
         <div class="main-content">
-            <!-- Search Bar -->
+
             <div class="search-bar">
                 <form onsubmit="getWeatherByCity(); return false;">
                     <input type="text" id="cityInput" placeholder="Search for cities" aria-label="City name" />
@@ -29,7 +28,6 @@
                 </form>
             </div>
 
-            <!-- Weather Overview -->
             <div class="weather-overview">
                 <div class="current-weather">
                     <div class="city-info">
@@ -45,7 +43,6 @@
                     </div>
                 </div>
 
-                <!-- Hourly Forecast -->
                 <div class="hourly-forecast" id="hourlyForecast">
                     <div class="hour">
                         <p>6:00 AM</p><i class="fa-solid fa-cloud"></i>
@@ -73,7 +70,6 @@
                     </div>
                 </div>
 
-                <!-- Air Conditions -->
                 <div class="air-conditions">
                     <div>
                         <p>Real Feel</p>
@@ -94,7 +90,6 @@
                 </div>
             </div>
 
-            <!-- 7 Day Forecast -->
             <div class="weekly-forecast">
                 <h3>7-Day Forecast</h3>
                 <div id="weeklyForecast" class="forecast-days">
