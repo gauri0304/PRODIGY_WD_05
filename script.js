@@ -27,7 +27,6 @@ async function getWeatherByCity() {
   }
 }
 
-// Current weather update
 function updateCurrentWeather(data) {
   document.getElementById('cityName').textContent = data.name;
   document.getElementById('temperature').textContent = `${Math.round(data.main.temp)}°`;
@@ -37,7 +36,6 @@ function updateCurrentWeather(data) {
   document.getElementById('windSpeed').textContent = `${data.wind.speed} km/h`;
   document.getElementById('rainChance').textContent = `Chance of rain: ${data.clouds.all}%`;
 
-  // Sunrise & Sunset
   const sunrise = new Date((data.sys.sunrise + data.timezone) * 1000).toUTCString().slice(17, 22);
   const sunset = new Date((data.sys.sunset + data.timezone) * 1000).toUTCString().slice(17, 22);
   document.getElementById('sunTime').textContent = `🌅 Sunrise: ${sunrise} | 🌇 Sunset: ${sunset}`;
@@ -49,13 +47,11 @@ function updateCurrentWeather(data) {
   updateLocalTime(data.timezone);
 }
 
-// Local time update
 function updateLocalTime(offsetInSeconds) {
   const localTime = new Date(Date.now() + offsetInSeconds * 1000);
   document.getElementById('localTime').textContent = `🕒 Local Time: ${localTime.toUTCString().slice(17, 22)}`;
 }
 
-// Hourly forecast update
 function updateHourlyForecast(data) {
   const hourlyContainer = document.getElementById('hourlyForecast');
   hourlyContainer.innerHTML = '';
@@ -77,7 +73,6 @@ function updateHourlyForecast(data) {
   }
 }
 
-// Weekly forecast update
 function updateWeeklyForecast(data) {
   const forecastContainer = document.getElementById('weeklyForecast');
   const days = {};
@@ -107,7 +102,6 @@ function updateWeeklyForecast(data) {
   `).join('') + '</ul>';
 }
 
-// 🔔 Toast Notification
 function showToast(message) {
   const toast = document.createElement('div');
   toast.textContent = message;
@@ -132,7 +126,6 @@ function showToast(message) {
   }, 4000);
 }
 
-// 🌗 Theme Toggle
 function addThemeToggle() {
   const toggleBtn = document.createElement('button');
   toggleBtn.textContent = '🌓';
