@@ -26,12 +26,18 @@ body {
 
 .dashboard h1 {
   color: #fff;
+  font-size: 40px;
   text-align: center;
   padding-bottom: 10px;
+  transition: all 0.4s ease;
 }
 
 .dashboard h1:hover {
-  color: #fff;
+  color: #273c75;
+  font-size: 50px;
+  text-shadow: 2px 2px 8px rgba(39, 60, 117, 0.5);
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 /* Search-bar Styling */
@@ -162,6 +168,7 @@ body {
 
 .city-info h1:hover {
   font-size: 70px;
+  color: #fbc531;
 }
 
 .weather-icon img {
@@ -339,7 +346,8 @@ body.light-theme .current-weather,
 body.light-theme .weekly-forecast h3,
 body.light-theme .city-info h2,
 body.light-theme .city-info p,
-body.light-theme .city-info h1 {
+body.light-theme .city-info h1,
+body.light-theme .air-conditions p {
   background-color: #f0f2f8;
   color: #000;
 }
